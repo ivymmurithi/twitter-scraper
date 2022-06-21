@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="nav-item logout">
+        <a class="navlink logout-font" href="{% url 'logoutuser' %}">Logout</a>
+    </div>
+
+    <div>
+        <h2 class="text-center mt-4 heading" 
+            style="font-family: 'Satisfy', cursive; font-size: 2.2rem;">
+            Retrieved Tweets</h2>
+    </div>
+
+<div class="container grid">
+    {% for tweet in tweets %}
+        <div class="card main-card" style="width: 18rem;">
+            <div class="card-body">
+                {% for user in users %}
+                    <h5 class="card-title">{{user.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{user.username}}</h6>
+                {% endfor %}
+                <p class="card-text">{{tweet.text}}</p>
+            </div>
+            <form action="/like/{{tweet.username_id}}/" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="like-btn" class="btn btn-outline-dark btn-rounded mt-2" data-mdb-ripple-color="dark">Like
+                </button>
+            </form>
+            <form action="/detailed_view/{{tweet.id}}/" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="detailed-btn" class="btn btn-outline-dark btn-rounded mt-2" data-mdb-ripple-color="dark">Detailed
+                    View
+                </button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

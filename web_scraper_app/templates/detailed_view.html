@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div>
+        <h2 class="text-center mt-4 heading" style="font-family: 'Satisfy', cursive; font-size: 2.2rem;">
+            Detailed View of Tweet</h2>
+    </div>
+
+    {% for tweet_in_db in tweets_in_db %}
+        <div class="card" id="detailed-view_card" style="width: 18rem;">
+            <div class="card-body">
+                {% for user in users %}
+                    <h5 class="card-title">{{user.name}}</h5>
+                {% endfor %}
+                    <h5 class="card-title">{{tweet_in_db.tweet_by}}</h5>
+                <p class="card-text">{{tweet_in_db.text}}</p>
+                <p class="card-text"> <span class="stats">Retweets:</span> {{tweet_in_db.retweet_count}}</p>
+                <p class="card-text"> <span class="stats">Likes:</span> {{tweet_in_db.favorite_count}}</p>
+            </div>
+            <form action="/home/" method="GET">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-dark btn-rounded mt-5" data-mdb-ripple-color="dark">Back
+                </button>
+            </form>
+        </div>
+    {% endfor %}
+
+{% endblock %}

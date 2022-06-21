@@ -1,0 +1,47 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.logout {
+    float: right;
+    margin-right: 3%;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.logout-font {
+    font-family: 'Satisfy', cursive;
+    font-size: 2rem;
+    color: #14213d;
+}
+
+.card {
+    margin-top: 15%;
+}
+
+#detailed-view_card {
+    margin-top: 5% !important;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.stats {
+    color: #457b9d;
+    font-size: 1.3rem;
+}
+
+.grid {
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, 5fr);
+    justify-content: space-between;
+}
+
+.card-body {
+    background-color: #edf2f4;
+}
+
+#like-btn #detailed-btn {
+    display: flex;
+}
