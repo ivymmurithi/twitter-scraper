@@ -34,5 +34,3 @@ def send_email(request):
     else:
         print('Email Failed to Send')
     return HttpResponseRedirect(reverse('get_tweets'))
-
-send_mail()
