@@ -1,13 +1,13 @@
-# Third party Libraries
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import HttpResponseRedirect, redirect, render
 from django.urls import reverse
 
-# Django apps
+from config import settings
+
 from .forms import RegisterForm
 from .models import Tweets, Usernames
-from config import settings
+
 
 def register(request):
     if request.method == 'POST':

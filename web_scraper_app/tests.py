@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from .models import Tweets,Usernames
+from .models import Tweets, Usernames
 
 
 class TweetsTestClass(TestCase):
