@@ -63,8 +63,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web_scraper_app.apps.WebScraperAppConfig',
-    'django_celery_results',
-
 ]
 
 MIDDLEWARE = [

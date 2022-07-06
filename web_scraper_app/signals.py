@@ -1,15 +1,10 @@
-import re
-
-from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 from django.dispatch import receiver
-from requests import request
 
 from config import settings
-
-from .models import Profile, Tweets
-
+from django.core.mail import send_mail
+from .models import Profile,Tweets
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
