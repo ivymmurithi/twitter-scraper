@@ -28,6 +28,12 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
+
+CELERY_IMPORTS = (
+    'config.tasks'
+)
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -63,6 +69,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web_scraper_app.apps.WebScraperAppConfig',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [

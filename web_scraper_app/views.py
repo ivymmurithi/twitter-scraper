@@ -22,9 +22,7 @@ def register(request):
     )
 
 
-@login_required
-def get_tweets(request):
-
+def get_tweets():
     usernames = settings.client.get_users(usernames=['ivymmurithi'], user_auth=True)    
     for user in usernames.data:
         name = user.name
@@ -59,9 +57,11 @@ def get_tweets(request):
         else:
             print('Tweets already exists')
 
+@login_required
+def display_tweets(request):
+    get_tweets()
     retrieved_tweets = Tweets.objects.all()
     retrieved_users = Usernames.objects.all()
-
     return render(
         request, 'index.html', {'tweets':retrieved_tweets, 'users':retrieved_users}
     )
