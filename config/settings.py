@@ -46,7 +46,7 @@ client = tweepy.Client(
     access_token_secret=env('Access_Token_Secret')
 )
 
-auth = tweepy.OAuthHandler(
+auth = tweepy.OAuth1UserHandler(
     env('API_Key'),
     env('API_Key_Secret')
 )

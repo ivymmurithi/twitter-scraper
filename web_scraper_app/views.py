@@ -81,7 +81,7 @@ def like_tweet(request, tweet_clicked_id):
         print('Tweet liked successfully')
     else:
         print('Tweet not liked')
-    return HttpResponseRedirect(reverse('get_tweets')) 
+    return HttpResponseRedirect(reverse('display_tweets')) 
 
 def logoutuser(request):
     logout(request)
