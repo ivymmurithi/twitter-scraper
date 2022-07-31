@@ -175,4 +175,4 @@ EMAIL_HOST_PASSWORD= env('EMAIL_HOST_PASSWORD')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'get_tweets'
+LOGIN_REDIRECT_URL = 'display_tweets'

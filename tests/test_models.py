@@ -24,16 +24,24 @@ class TweetsTestClass(TestCase):
         )
 
     def test_create_method(self):
-        Tweets.objects.create(
+        tweet = Tweets.objects.create(
             username_id = '12345678910',
             text = 'This is my first tweet',
             tweet_by = 'ivymmurithi',
             retweet_count = 20,
             favorite_count = 100
         )
-        tweet = Tweets.objects.all()
-        self.assertTrue(len(tweet) > 0)
+        assert Tweets.objects.filter(
+            username_id = '12345678910',
+            text = 'This is my first tweet',
+            tweet_by = 'ivymmurithi',
+            retweet_count = 20,
+            favorite_count = 100
+        ).exists()
 
+    def test_field_access(tweet_sample):
+        assert tweet_sample
+        
 
 class UsernamesTestClass(TestCase):
 
@@ -43,4 +51,3 @@ class UsernamesTestClass(TestCase):
 
     def test_usernames_instance(self):
         self.assertTrue(isinstance(self.username1, Usernames))
-

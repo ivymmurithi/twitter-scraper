@@ -34,7 +34,6 @@ def get_tweets():
         else:
             print('User already exists')
 
-
     user_tweets = settings.api.user_timeline(screen_name='ivymmurithi')
     for user_tweet in user_tweets:
         username_id = user_tweet.id

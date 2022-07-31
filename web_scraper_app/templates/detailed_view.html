@@ -19,7 +19,7 @@
                 <p class="card-text"> <span class="stats">Retweets:</span> {{tweet_in_db.retweet_count}}</p>
                 <p class="card-text"> <span class="stats">Likes:</span> {{tweet_in_db.favorite_count}}</p>
             </div>
-            <form action="/home/" method="GET">
+            <form action="/" method="GET">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-dark btn-rounded mt-5" data-mdb-ripple-color="dark">Back
                 </button>
